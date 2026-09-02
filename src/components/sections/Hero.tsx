@@ -22,8 +22,8 @@ import { RouteMarker } from "../shared/route-marker";
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden py-[70px] md:py-[80px] lg:py-[90px]">
-      <div className="container grid w-full grid-cols-1 items-center gap-[55px] md:grid-cols-2 md:gap-20">
+    <section className="overflow-hidden border-b border-slate/10 py-16 sm:py-20 lg:py-24">
+      <div className="container grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
         {/* LEFT CONTENT */}
         <div>
           {/* Eyebrow */}
@@ -38,7 +38,7 @@ export default function Hero() {
               ...motionTransitions.slow,
               delay: 0.1,
             }}
-            className="mb-[25px] mt-[22px] font-display text-[clamp(48px,7vw,88px)] font-semibold leading-[0.98] tracking-[-0.02em]"
+            className="mb-6 mt-5 max-w-2xl font-display text-[clamp(3rem,7vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.045em] text-ink"
           >
             {content.hero.headline.split("\n").map((line) => (
               <span key={line} className="block">
@@ -126,7 +126,7 @@ export default function Hero() {
               ...hoverLiftLarge,
               transition: motionTransitions.fast,
             }}
-            className="relative z-10 w-full border border-slate/20 bg-paper p-[21px] shadow-[12px_14px_0_rgba(18,24,31,0.06)] md:absolute md:right-0 md:top-[42px] md:w-[min(390px,82%)]"
+            className="relative z-10 w-full border border-slate/20 bg-paper p-5 shadow-[8px_8px_0_rgba(18,24,31,0.06)] transition-colors duration-300 hover:border-brass/50 md:absolute md:right-0 md:top-10 md:w-[min(390px,82%)]"
           >
             <div className="flex items-center justify-between">
               <span className="font-mono text-[9px] uppercase tracking-[.15em] text-slate">
@@ -176,7 +176,7 @@ export default function Hero() {
               ...hoverLift,
               transition: motionTransitions.fast,
             }}
-            className="relative z-10 mt-4 w-full border border-ink bg-ink p-[21px] text-paper shadow-[10px_10px_0_rgba(184,134,63,0.28)] md:absolute md:bottom-[25px] md:left-2.5 md:mt-0 md:w-[min(300px,70%)]"
+            className="relative z-10 mt-4 w-full border border-ink bg-ink p-5 text-paper shadow-[8px_8px_0_rgba(184,134,63,0.24)] md:absolute md:bottom-6 md:left-2.5 md:mt-0 md:w-[min(300px,70%)]"
           >
             <div className="flex items-center gap-2 font-mono text-[10px] text-slate">
               <GitBranch size={13} />

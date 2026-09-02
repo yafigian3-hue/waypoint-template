@@ -4,32 +4,33 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export const motionTransitions = {
   fast: {
-    duration: 0.2,
+    duration: 0.18,
+    ease: easeOut,
   } satisfies Transition,
 
   standard: {
-    duration: 0.6,
+    duration: 0.5,
     ease: easeOut,
   } satisfies Transition,
 
   slow: {
-    duration: 0.8,
+    duration: 0.7,
     ease: easeOut,
   } satisfies Transition,
 
   route: {
-    duration: 1,
+    duration: 0.9,
     ease: easeOut,
   } satisfies Transition,
 
   pulse: {
-    duration: 2,
+    duration: 2.4,
     repeat: Infinity,
     ease: "easeInOut",
   } satisfies Transition,
 
   signal: {
-    duration: 1.2,
+    duration: 1,
     ease: "easeInOut",
   } satisfies Transition,
 };
@@ -46,7 +47,7 @@ export const fadeIn = {
 export const fadeUp = {
   initial: {
     opacity: 0,
-    y: 30,
+    y: 18,
   },
   animate: {
     opacity: 1,
@@ -57,7 +58,7 @@ export const fadeUp = {
 export const fadeUpLarge = {
   initial: {
     opacity: 0,
-    y: 40,
+    y: 24,
   },
   animate: {
     opacity: 1,
@@ -69,7 +70,7 @@ export const fadeLeft = {
   initial: {
     opacity: 0,
     x: -40,
-    y: 30,
+    y: 18,
   },
   animate: {
     opacity: 1,
@@ -101,11 +102,11 @@ export const revealX = {
 };
 
 export const hoverLift = {
-  y: -5,
+  y: -3,
 };
 
 export const hoverLiftLarge = {
-  y: -6,
+  y: -4,
 };
 
 export const pulseScale = {

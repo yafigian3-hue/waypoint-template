@@ -10,18 +10,18 @@ type CtaButtonProps = {
 
 const variantClasses: Record<NonNullable<CtaButtonProps["variant"]>, string> = {
   dark: [
-    "border border-ink bg-ink text-paper",
-    "hover:bg-paper hover:text-ink",
+    "border border-ink bg-ink text-paper shadow-[4px_4px_0_rgba(184,134,63,0.7)]",
+    "hover:-translate-y-0.5 hover:translate-x-0.5 hover:bg-brass hover:text-ink hover:shadow-[2px_2px_0_rgba(18,24,31,0.8)]",
   ].join(" "),
 
   light: [
-    "border border-paper/70 bg-paper text-ink",
-    "hover:bg-transparent hover:text-paper hover:border-paper",
+    "border border-paper bg-paper text-ink shadow-[4px_4px_0_rgba(184,134,63,0.55)]",
+    "hover:-translate-y-0.5 hover:translate-x-0.5 hover:bg-brass hover:text-ink hover:shadow-[2px_2px_0_rgba(18,24,31,0.8)]",
   ].join(" "),
 
   text: [
-    "border border-slate/20 bg-transparent text-ink",
-    "hover:border-ink hover:bg-ink hover:text-paper",
+    "border border-slate/25 bg-transparent text-ink",
+    "hover:border-brass hover:bg-brass/10 hover:text-ink",
   ].join(" "),
 };
 
@@ -46,15 +46,14 @@ export function CtaButton({
     <a
       href={href}
       className={cn(
-        "group inline-flex min-h-10 items-center justify-center",
-        "gap-3 px-4 sm:px-[18px]",
+        "group inline-flex min-h-11 w-full items-center justify-center sm:w-auto",
+        "gap-3 px-5 py-2.5 sm:px-6",
         "whitespace-nowrap",
-        "font-mono text-[11px] font-semibold uppercase tracking-[0.04em]",
-        "transition-all duration-200 ease-out",
-        "hover:-translate-y-0.5",
+        "font-mono text-[10px] font-semibold uppercase tracking-[0.14em]",
+        "transition-all duration-300 ease-out",
+        "active:translate-x-0 active:translate-y-0 active:shadow-none",
         "focus-visible:outline-none",
-        "focus-visible:ring-2 focus-visible:ring-ink/30",
-        "focus-visible:ring-offset-2",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
         variantClasses[variant],
         className,
       )}

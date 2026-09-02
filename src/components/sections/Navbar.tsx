@@ -21,9 +21,9 @@ export default function Navbar() {
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="sticky top-0 z-50 border-b border-slate/20 bg-paper/92 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-slate/10 bg-paper/85 shadow-[0_1px_0_rgba(184,134,63,0.08)] backdrop-blur-2xl"
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-[4.5rem] items-center justify-between gap-6">
         <Logo>{content.nav.logo}</Logo>
 
         {/* Desktop navigation */}
@@ -39,7 +39,7 @@ export default function Navbar() {
                 delay: 0.2 + index * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative text-xs text-slate transition-colors duration-200 hover:text-ink"
+              className="group relative rounded-sm px-1 py-2 text-[11px] font-medium uppercase tracking-[0.14em] text-slate transition-colors duration-200 hover:text-ink"
             >
               {link.label}
 
@@ -70,7 +70,7 @@ export default function Navbar() {
             delay: 0.25,
           }}
           whileTap={{ scale: 0.9 }}
-          className="grid size-9 place-items-center md:hidden"
+          className="grid size-10 place-items-center border border-slate/20 text-ink transition-colors hover:border-brass hover:text-brass md:hidden"
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -121,9 +121,9 @@ export default function Navbar() {
               duration: 0.3,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="overflow-hidden border-t border-slate/20"
+            className="overflow-hidden border-t border-slate/10 bg-ink text-paper shadow-[0_14px_30px_rgba(18,24,31,0.14)]"
           >
-            <nav className="container flex flex-col gap-[18px] pb-[26px] pt-5 text-sm">
+            <nav className="container flex flex-col gap-2 pb-7 pt-5 text-sm">
               {content.nav.links.map((link, index) => (
                 <motion.a
                   key={link.label}
@@ -136,7 +136,7 @@ export default function Navbar() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   onClick={closeMenu}
-                  className="transition-colors duration-200 hover:text-brass"
+                  className="border-b border-paper/10 py-3 text-paper/80 transition-colors duration-200 hover:border-brass hover:text-brass"
                 >
                   {link.label}
                 </motion.a>
