@@ -3,44 +3,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { content } from "../../lib/content";
 
-function Logo() {
-  return (
-    <motion.a
-      href="#top"
-      initial={{ opacity: 0, x: -12 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{ x: 2 }}
-      className="flex items-center gap-2 font-mono text-sm font-semibold tracking-[-0.04em]"
-      aria-label="Waypoint home"
-    >
-      WAYPOINT
-    </motion.a>
-  );
-}
-
-function Button({
-  children,
-  href = "#start",
-}: {
-  children: React.ReactNode;
-  href?: string;
-}) {
-  return (
-    <motion.a
-      href={href}
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.2 }}
-      className="inline-flex min-h-[42px] items-center justify-center gap-2.5 bg-ink px-[17px] text-xs font-semibold text-paper"
-    >
-      {children}
-    </motion.a>
-  );
-}
+import { Logo } from "../shared/logo";
+import { CtaButton } from "../shared/cta-button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -60,7 +24,7 @@ export default function Navbar() {
       className="sticky top-0 z-10 border-b border-slate/20 bg-paper/92 backdrop-blur-xl"
     >
       <div className="container flex h-16 items-center justify-between">
-        <Logo />
+        <Logo>{content.nav.logo}</Logo>
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-7 md:flex">
@@ -92,7 +56,7 @@ export default function Navbar() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <Button href="#start">{content.nav.cta}</Button>
+            <CtaButton href="#start">{content.nav.cta}</CtaButton>{" "}
           </motion.div>
         </nav>
 
@@ -187,7 +151,7 @@ export default function Navbar() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <Button href="#start">{content.nav.cta}</Button>
+                <CtaButton href="#start">{content.nav.cta}</CtaButton>{" "}
               </motion.div>
             </nav>
           </motion.div>
