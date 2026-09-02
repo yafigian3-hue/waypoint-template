@@ -21,7 +21,7 @@ export default function Navbar() {
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="sticky top-0 z-10 border-b border-slate/20 bg-paper/92 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-slate/20 bg-paper/92 backdrop-blur-xl"
     >
       <div className="container flex h-16 items-center justify-between">
         <Logo>{content.nav.logo}</Logo>

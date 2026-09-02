@@ -70,16 +70,9 @@ export default function Hero() {
           >
             <CtaButton href="#start">{content.hero.primary}</CtaButton>
 
-            <a
-              href="#how-it-works"
-              className="group inline-flex min-h-[42px] items-center gap-2.5 text-xs font-medium transition-transform duration-200 hover:translate-x-1"
-            >
+            <CtaButton href="#how-it-works" variant="text">
               {content.hero.secondary}
-
-              <span className="grid size-7 place-items-center border border-slate/20 transition-colors duration-200 group-hover:border-brass group-hover:text-brass">
-                <ArrowRight size={14} />
-              </span>
-            </a>
+            </CtaButton>
           </motion.div>
 
           {/* Trust line */}
