@@ -16,7 +16,6 @@ export default function WaypointLanding() {
     <main id="top">
       <Navbar />
       <Hero />
-      <LogoCloud />
       <Problem />
       <Solution />
       <HowItWorks />
@@ -25,6 +24,7 @@ export default function WaypointLanding() {
       <Pricing />
       <FAQ />
       <FinalCta />
+      <LogoCloud />
       <Footer />
     </main>
   );
