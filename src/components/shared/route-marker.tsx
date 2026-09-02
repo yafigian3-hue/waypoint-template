@@ -1,28 +1,23 @@
-interface RouteMarkerProps {
-  className?: string;
-  showNumber?: boolean;
-  number?: string;
-}
+import { cn } from "../../lib/utils";
 
 export function RouteMarker({
-  className = "",
-  showNumber = false,
-  number,
-}: RouteMarkerProps) {
+  className,
+  variant = "route",
+}: {
+  className?: string;
+  variant?: "route" | "brass";
+}) {
+  const line = variant === "brass" ? "border-brass" : "border-route";
+  const dot = variant === "brass" ? "bg-brass" : "bg-route";
+
   return (
     <div
-      className={`relative flex h-full min-h-[120px] w-8 justify-center ${className}`}
+      className={cn("relative flex h-[27px] items-center", className)}
       aria-hidden="true"
     >
-      <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 border-l border-dashed border-[var(--route-line)]" />
-
-      <span className="relative z-10 mt-1 flex h-3 w-3 items-center justify-center rounded-full border border-[var(--route-line)] bg-[var(--paper)]">
-        {showNumber && number ? (
-          <span className="absolute left-5 whitespace-nowrap font-mono text-xs text-[var(--route-line)]">
-            {number}
-          </span>
-        ) : null}
-      </span>
+      <span className={cn("size-2 rounded-full border bg-paper", line)} />
+      <span className={cn("flex-1 border-t border-dashed opacity-80", line)} />
+      <span className={cn("size-2 rounded-full", dot)} />
     </div>
   );
 }

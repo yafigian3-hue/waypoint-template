@@ -3,13 +3,10 @@ import {
   ArrowRight,
   Check,
   ChevronDown,
-  Menu,
-  X,
   Activity,
   Bell,
   Bug,
   CircleAlert,
-  GitBranch,
   LayoutDashboard,
   Route,
   Search,
@@ -23,6 +20,9 @@ import {
   previewRows,
   type PreviewTab,
 } from "../lib/content";
+
+ import Navbar from "./sections/Navbar";
+ import Hero from "../components/sections/Hero";
 
 function Logo() {
   return (
@@ -231,46 +231,6 @@ function DashboardPreview() {
   );
 }
 
-function Nav() {
-  const [open, setOpen] = useState(false);
-  return (
-    <header className="sticky top-0 z-10 border-b border-slate/20 bg-paper/92 backdrop-blur-xl">
-      <div className="container flex h-16 items-center justify-between">
-        <Logo />
-        <nav className="hidden items-center gap-7 md:flex">
-          {content.nav.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-xs text-slate transition-colors hover:text-ink"
-            >
-              {link.label}
-            </a>
-          ))}
-          <Button href="#start">{content.nav.cta}</Button>
-        </nav>
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-      </div>
-      {open && (
-        <nav className="container flex flex-col gap-[18px] border-t border-slate/20 pb-[26px] pt-5 text-sm">
-          {content.nav.links.map((link) => (
-            <a key={link.label} href={link.href} onClick={() => setOpen(false)}>
-              {link.label}
-            </a>
-          ))}
-          <Button href="#start">{content.nav.cta}</Button>
-        </nav>
-      )}
-    </header>
-  );
-}
-
 function SectionLabel({
   children,
   light = false,
@@ -322,83 +282,8 @@ export default function WaypointLanding() {
   const [annual, setAnnual] = useState(false);
   return (
     <main id="top">
-      <Nav />
-
-      <section className="overflow-hidden pb-[100px] pt-[75px] md:pt-[110px]">
-        <div className="container grid grid-cols-1 items-center gap-[55px] md:grid-cols-2 md:gap-20">
-          <div>
-            <SectionLabel>{content.hero.eyebrow}</SectionLabel>
-            <h1 className="mb-[25px] mt-[22px] font-display text-[clamp(48px,7vw,88px)] font-semibold leading-[0.98] tracking-[-0.02em]">
-              {content.hero.headline.split("\n").map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </h1>
-            <p className="max-w-[480px] text-base leading-[1.65] text-slate">
-              {content.hero.subheadline}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="#start">{content.hero.primary}</Button>
-              <a
-                href="#how-it-works"
-                className="inline-flex min-h-[42px] items-center gap-2.5 text-xs font-medium"
-              >
-                {content.hero.secondary}
-                <span className="grid size-7 place-items-center border border-slate/20">
-                  <ArrowRight size={14} />
-                </span>
-              </a>
-            </div>
-            <div className="mt-6 flex items-center gap-2 text-[11px] text-slate">
-              <span className="inline-block size-1.5 rounded-full bg-brass" />
-              Set up in 5 minutes · No credit card required
-            </div>
-          </div>
-          <div className="relative min-h-[370px] md:min-h-[390px]">
-            <RouteLine className="absolute left-[-48px] right-[-45px] top-[49%] rotate-[-24deg]" />
-            <div className="absolute right-0 top-[42px] w-[min(390px,82%)] border border-slate/20 bg-paper p-[21px] shadow-[12px_14px_0_rgba(18,24,31,0.06)]">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[9px] uppercase tracking-[.15em] text-slate">
-                  Live incident
-                </span>
-                <span className="font-mono text-[9px] text-status">
-                  ● 2 min ago
-                </span>
-              </div>
-              <div className="mt-5 flex items-start gap-3">
-                <div className="grid size-9 shrink-0 place-items-center bg-status/10 text-status">
-                  <CircleAlert size={17} />
-                </div>
-                <div>
-                  <div className="font-mono text-xs font-semibold">
-                    PaymentTimeoutError
-                  </div>
-                  <div className="mt-1 font-mono text-[10px] text-slate">
-                    payments-service · POST /checkout
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 border-t border-slate/20 pt-3 font-mono text-[10px] text-slate">
-                <span className="text-brass">root cause</span> · database
-                connection pool exhausted
-              </div>
-            </div>
-            <div className="absolute bottom-[25px] left-2.5 w-[min(300px,70%)] border border-ink bg-ink p-[21px] text-paper shadow-[10px_10px_0_rgba(184,134,63,0.28)]">
-              <div className="flex items-center gap-2 font-mono text-[10px] text-slate">
-                <GitBranch size={13} /> Trace path
-              </div>
-              <div className="mt-4 flex items-center gap-1.5 font-mono text-[10px]">
-                <span>api-gateway</span>
-                <ArrowRight size={11} className="text-slate" />
-                <span>checkout</span>
-                <ArrowRight size={11} className="text-slate" />
-                <span className="text-brass">payments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Navbar />
+      <Hero />
 
       <section className="border-y border-slate/20 py-[22px]">
         <div className="container flex flex-wrap items-center justify-between gap-5">
