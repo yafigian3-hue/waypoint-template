@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CircleAlert, GitBranch } from "lucide-react";
+
 import { content } from "../../lib/content";
+import {
+  fadeIn,
+  fadeLeft,
+  fadeRight,
+  fadeUp,
+  fadeUpLarge,
+  hoverLift,
+  hoverLiftLarge,
+  motionTransitions,
+  pulseOpacity,
+  pulseScale,
+  revealX,
+} from "../../lib/animations";
+
 import { CtaButton } from "../shared/cta-button";
 import { SectionLabel } from "../shared/section-label";
 import { RouteMarker } from "../shared/route-marker";
@@ -11,24 +26,17 @@ export default function Hero() {
       <div className="container grid grid-cols-1 items-center gap-[55px] md:grid-cols-2 md:gap-20">
         {/* LEFT CONTENT */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
+          {/* Eyebrow */}
+          <motion.div {...fadeUp} transition={motionTransitions.standard}>
             <SectionLabel>{content.hero.eyebrow}</SectionLabel>
           </motion.div>
 
+          {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeUpLarge}
             transition={{
-              duration: 0.8,
+              ...motionTransitions.slow,
               delay: 0.1,
-              ease: [0.22, 1, 0.36, 1],
             }}
             className="mb-[25px] mt-[22px] font-display text-[clamp(48px,7vw,88px)] font-semibold leading-[0.98] tracking-[-0.02em]"
           >
@@ -39,26 +47,24 @@ export default function Hero() {
             ))}
           </motion.h1>
 
+          {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeUp}
             transition={{
-              duration: 0.7,
+              ...motionTransitions.standard,
               delay: 0.2,
-              ease: [0.22, 1, 0.36, 1],
             }}
             className="max-w-[480px] text-base leading-[1.65] text-slate"
           >
             {content.hero.subheadline}
           </motion.p>
 
+          {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...fadeUp}
             transition={{
-              duration: 0.7,
+              ...motionTransitions.standard,
               delay: 0.3,
-              ease: [0.22, 1, 0.36, 1],
             }}
             className="mt-6 flex flex-wrap gap-3"
           >
@@ -66,21 +72,21 @@ export default function Hero() {
 
             <a
               href="#how-it-works"
-              className="inline-flex min-h-[42px] items-center gap-2.5 text-xs font-medium transition-transform duration-200 hover:translate-x-1"
+              className="group inline-flex min-h-[42px] items-center gap-2.5 text-xs font-medium transition-transform duration-200 hover:translate-x-1"
             >
               {content.hero.secondary}
 
-              <span className="grid size-7 place-items-center border border-slate/20">
+              <span className="grid size-7 place-items-center border border-slate/20 transition-colors duration-200 group-hover:border-brass group-hover:text-brass">
                 <ArrowRight size={14} />
               </span>
             </a>
           </motion.div>
 
+          {/* Trust line */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            {...fadeIn}
             transition={{
-              duration: 0.8,
+              ...motionTransitions.slow,
               delay: 0.5,
             }}
             className="mt-6 flex items-center gap-2 text-[11px] text-slate"
@@ -94,49 +100,37 @@ export default function Hero() {
         <div className="relative min-h-[300px] md:min-h-[390px]">
           {/* Route */}
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
+            {...revealX}
             transition={{
-              duration: 1,
+              ...motionTransitions.route,
               delay: 0.3,
-              ease: [0.22, 1, 0.36, 1],
             }}
             className="absolute left-[-48px] right-[-45px] top-[49%] hidden origin-left rotate-[-24deg] md:block"
           >
             <RouteMarker />
 
+            {/* Moving signal */}
             <motion.span
               initial={{ left: "0%" }}
               animate={{ left: "100%" }}
               transition={{
-                duration: 1.2,
+                ...motionTransitions.signal,
                 delay: 0.65,
-                ease: "easeInOut",
               }}
-              className="absolute top-1/2 size-2 -translate-y-1/2 -translate-x-1/2 rounded-full bg-brass shadow-[0_0_0_4px_rgba(184,134,63,0.12)]"
+              className="absolute top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_0_4px_rgba(184,134,63,0.12)]"
             />
           </motion.div>
 
           {/* Incident Card */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: 50,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
+            {...fadeRight}
             transition={{
-              duration: 0.8,
+              ...motionTransitions.slow,
               delay: 0.4,
-              ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{
-              y: -6,
-              transition: {
-                duration: 0.2,
-              },
+              ...hoverLiftLarge,
+              transition: motionTransitions.fast,
             }}
             className="relative w-full border border-slate/20 bg-paper p-[21px] shadow-[12px_14px_0_rgba(18,24,31,0.06)] md:absolute md:right-0 md:top-[42px] md:w-[min(390px,82%)]"
           >
@@ -151,15 +145,10 @@ export default function Hero() {
             </div>
 
             <div className="mt-5 flex items-start gap-3">
+              {/* Alert pulse */}
               <motion.div
-                animate={{
-                  scale: [1, 1.08, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                animate={pulseScale}
+                transition={motionTransitions.pulse}
                 className="grid size-9 shrink-0 place-items-center bg-status/10 text-status"
               >
                 <CircleAlert size={17} />
@@ -184,23 +173,14 @@ export default function Hero() {
 
           {/* Trace Card */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -40,
-              y: 30,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              y: 0,
-            }}
+            {...fadeLeft}
             transition={{
-              duration: 0.8,
+              ...motionTransitions.slow,
               delay: 0.65,
-              ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{
-              y: -5,
+              ...hoverLift,
+              transition: motionTransitions.fast,
             }}
             className="relative mt-4 w-full border border-ink bg-ink p-[21px] text-paper shadow-[10px_10px_0_rgba(184,134,63,0.28)] md:absolute md:bottom-[25px] md:left-2.5 md:mt-0 md:w-[min(300px,70%)]"
           >
@@ -218,15 +198,10 @@ export default function Hero() {
 
               <ArrowRight size={11} className="text-slate" />
 
+              {/* Active service pulse */}
               <motion.span
-                animate={{
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                animate={pulseOpacity}
+                transition={motionTransitions.pulse}
                 className="text-brass"
               >
                 payments
