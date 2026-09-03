@@ -452,3 +452,37 @@ export const faqAnswer = {
     height: 0,
   },
 };
+
+export const logoCloudHeader = {
+  initial: {
+    opacity: 0,
+    y: 16,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.6,
+  },
+};
+
+export const logoCloudLogo = {
+  initial: {
+    opacity: 0,
+    y: 14,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.6,
+  },
+};
+
+export const logoCloudLogoHover = {
+  y: -3,
+};
