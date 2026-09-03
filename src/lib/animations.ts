@@ -312,3 +312,41 @@ export const previewItem = {
 export const previewHover = {
   y: -2,
 };
+
+export const testimonialHeader = {
+  initial: {
+    opacity: 0,
+    y: 28,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const testimonialCard = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.25,
+  },
+};
+
+export const testimonialCardHover = {
+  y: -5,
+};
+
+export const testimonialQuoteHover = {
+  x: 3,
+};
