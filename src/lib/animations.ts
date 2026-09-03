@@ -350,3 +350,56 @@ export const testimonialCardHover = {
 export const testimonialQuoteHover = {
   x: 3,
 };
+
+export const pricingHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const pricingToggle = {
+  initial: {
+    opacity: 0,
+    y: 12,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.6,
+  },
+};
+
+export const pricingCard = {
+  initial: {
+    opacity: 0,
+    y: 32,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.2,
+  },
+};
+
+export const pricingCardHover = {
+  y: -5,
+};
+
+export const pricingToggleHover = {
+  y: -1,
+};
