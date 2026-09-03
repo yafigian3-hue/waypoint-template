@@ -20,8 +20,8 @@ import { SectionLabel } from "../shared/section-label";
 function DashboardPreview() {
   const [tab, setTab] = useState<PreviewTab>("Error tracking");
   return (
-    <div className="mt-[50px] overflow-hidden border border-slate/20 bg-white shadow-[18px_18px_0_rgba(18,24,31,0.08)]">
-      <div className="flex items-center justify-between border-b border-slate/20 px-[15px] py-[11px]">
+    <div className="mt-10 overflow-hidden border border-slate/20 bg-paper shadow-[8px_8px_0_rgba(18,24,31,0.1)] transition-shadow duration-300 hover:shadow-[10px_10px_0_rgba(184,134,63,0.2)] sm:mt-12 lg:mt-14">
+      <div className="flex min-h-12 items-center justify-between border-b border-slate/15 bg-paper px-4 py-3 sm:px-5">
         <div className="flex gap-1.5">
           <i className="block size-1.5 rounded-full bg-slate/20" />
           <i className="block size-1.5 rounded-full bg-slate/20" />
@@ -33,7 +33,7 @@ function DashboardPreview() {
         <div className="size-3 rounded-full bg-slate/20" />
       </div>
       <div className="flex min-h-[360px]">
-        <aside className="hidden w-[170px] flex-none border-r border-slate/20 px-3.5 py-[22px] md:block">
+        <aside className="hidden w-44 flex-none border-r border-slate/15 bg-ink px-3.5 py-6 text-paper md:block">
           <div className="mb-8 flex items-center gap-2 font-mono text-[10px] font-semibold">
             <span className="grid size-5 place-items-center bg-ink text-paper">
               <Route size={11} />
@@ -97,7 +97,10 @@ function DashboardPreview() {
                   ["Affected services", "3", "+1 today"],
                   ["Error rate", "0.42%", "-8.1%"],
                 ].map(([label, value, change]) => (
-                  <div className="border border-slate/20 p-3" key={label}>
+                  <div
+                    className="border border-slate/15 bg-paper p-3.5 transition-colors duration-200 hover:border-brass/60"
+                    key={label}
+                  >
                     <div className="font-mono text-[8px] uppercase text-slate">
                       {label}
                     </div>
@@ -159,10 +162,10 @@ function DashboardPreview() {
 
 export default function Preview() {
   return (
-    <section className="pb-[100px] pt-20 md:pt-[120px]">
+    <section className="relative overflow-hidden border-b border-slate/10 bg-paper-dim pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-28 lg:pt-28">
       <div className="container">
         <SectionLabel>PRODUCT PREVIEW</SectionLabel>
-        <h2 className="my-5 font-display text-[clamp(34px,5vw,58px)] leading-[1.05] tracking-[-0.02em]">
+        <h2 className="my-5 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
           {content.preview.headline}
         </h2>
         <DashboardPreview />
