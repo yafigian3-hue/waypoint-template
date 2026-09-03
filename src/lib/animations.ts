@@ -227,3 +227,41 @@ export const solutionIconHover = {
   rotate: -4,
   scale: 1.04,
 };
+
+export const howHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const howStep = {
+  initial: {
+    opacity: 0,
+    y: 32,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.25,
+  },
+};
+
+export const howStepHover = {
+  y: -4,
+};
+
+export const howStepSignalHover = {
+  width: "64px",
+};
