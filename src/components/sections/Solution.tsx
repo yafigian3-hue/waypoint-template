@@ -5,27 +5,27 @@ import { CtaButton } from "../shared/cta-button";
 
 export default function Solution() {
   return (
-    <section className="bg-paper-dim py-20 md:py-[120px]">
-      <div className="container grid grid-cols-1 gap-[55px] md:grid-cols-[0.9fr_1.1fr] md:gap-[100px]">
+    <section className="relative overflow-hidden border-y border-slate/10 bg-paper-dim py-16 sm:py-20 lg:py-28">
+      <div className="container grid grid-cols-1 gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16 lg:gap-24">
         <div>
           <SectionLabel>{content.solution.eyebrow}</SectionLabel>
-          <h2 className="my-5 font-display text-[clamp(34px,5vw,58px)] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="my-5 max-w-2xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
             {content.solution.headline}
           </h2>
-          <p className="max-w-[500px] leading-[1.65] text-slate">
+          <p className="max-w-xl text-sm leading-7 text-slate sm:text-base">
             {content.solution.body}
           </p>
           <CtaButton href="#how-it-works" className="mt-6">
             See how it works
           </CtaButton>
         </div>
-        <div className="flex flex-col gap-7">
+        <div className="grid gap-4 sm:gap-5">
           {content.solution.features.map((feature, i) => (
             <article
               key={feature.title}
-              className="flex gap-[17px] border-b border-slate/20 pb-[27px]"
+              className="group flex gap-4 border border-slate/15 bg-paper p-5 shadow-[5px_5px_0_rgba(18,24,31,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-brass/60 hover:shadow-[7px_7px_0_rgba(184,134,63,0.2)] sm:gap-5 sm:p-6"
             >
-              <div className="grid size-[35px] flex-none place-items-center border border-ink [&>svg]:w-4">
+              <div className="grid size-11 flex-none place-items-center border border-ink bg-ink text-paper transition-colors duration-300 group-hover:border-brass group-hover:bg-brass group-hover:text-ink [&>svg]:w-4">
                 {
                   [
                     <Route key="route" />,
@@ -35,12 +35,10 @@ export default function Solution() {
                 }
               </div>
               <div>
-                <h3 className="mb-2 text-[17px] tracking-[-0.03em]">
+                <h3 className="mb-2 text-base font-medium tracking-[-0.03em] text-ink sm:text-lg">
                   {feature.title}
                 </h3>
-                <p className="text-[13px] leading-[1.6] text-slate">
-                  {feature.text}
-                </p>
+                <p className="text-sm leading-6 text-slate">{feature.text}</p>
               </div>
             </article>
           ))}
