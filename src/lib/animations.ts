@@ -265,3 +265,50 @@ export const howStepHover = {
 export const howStepSignalHover = {
   width: "64px",
 };
+
+export const previewHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const previewDashboard = {
+  initial: {
+    opacity: 0,
+    y: 32,
+    scale: 0.985,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+  viewport: {
+    once: true,
+    amount: 0.2,
+  },
+};
+
+export const previewItem = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+export const previewHover = {
+  y: -2,
+};
