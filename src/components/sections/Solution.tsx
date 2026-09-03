@@ -23,7 +23,7 @@ export default function Solution() {
           {content.solution.features.map((feature, i) => (
             <article
               key={feature.title}
-              className="group flex gap-4 border border-slate/15 bg-paper p-5 shadow-[5px_5px_0_rgba(18,24,31,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-brass/60 hover:shadow-[7px_7px_0_rgba(184,134,63,0.2)] sm:gap-5 sm:p-6"
+              className="group flex gap-5 border border-slate/20 bg-paper p-6 shadow-[6px_6px_0_rgba(18,24,31,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-brass/60 hover:shadow-[7px_7px_0_rgba(18,24,31,0.1)] sm:p-7"
             >
               <div className="grid size-11 flex-none place-items-center border border-ink bg-ink text-paper transition-colors duration-300 group-hover:border-brass group-hover:bg-brass group-hover:text-ink [&>svg]:w-4">
                 {

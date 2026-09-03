@@ -20,7 +20,7 @@ export default function Problem() {
         <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-3">
           {content.problem.cards.map((card, i) => (
             <article
-              className="group border border-slate/15 bg-paper p-5 shadow-[5px_5px_0_rgba(18,24,31,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-brass/60 hover:shadow-[7px_7px_0_rgba(184,134,63,0.22)] sm:p-6"
+              className="group border border-slate/20 bg-paper p-6 shadow-[6px_6px_0_rgba(18,24,31,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-brass/60 hover:shadow-[7px_7px_0_rgba(18,24,31,0.1)] sm:p-7"
               key={card.title}
             >
               <div className="flex items-center justify-between border-b border-slate/10 pb-4">
