@@ -403,3 +403,52 @@ export const pricingCardHover = {
 export const pricingToggleHover = {
   y: -1,
 };
+
+export const faqHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const faqItem = {
+  initial: {
+    opacity: 0,
+    y: 18,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.2,
+  },
+};
+
+export const faqItemHover = {
+  x: 3,
+};
+
+export const faqAnswer = {
+  initial: {
+    opacity: 0,
+    height: 0,
+  },
+  animate: {
+    opacity: 1,
+    height: "auto",
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+  },
+};
