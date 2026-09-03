@@ -486,3 +486,52 @@ export const logoCloudLogo = {
 export const logoCloudLogoHover = {
   y: -3,
 };
+
+export const finalCtaRoute = {
+  initial: {
+    opacity: 0,
+    x: -24,
+  },
+  whileInView: {
+    opacity: 1,
+    x: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.6,
+  },
+};
+
+export const finalCtaContent = {
+  initial: {
+    opacity: 0,
+    y: 28,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const finalCtaButton = {
+  initial: {
+    opacity: 0,
+    y: 16,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.5,
+  },
+};
+
+export const finalCtaButtonHover = {
+  y: -3,
+};
