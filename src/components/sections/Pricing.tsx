@@ -8,11 +8,14 @@ export default function Pricing() {
   const [annual, setAnnual] = useState(false);
 
   return (
-    <section className="py-20 md:py-[120px]" id="pricing">
+    <section
+      className="relative overflow-hidden border-b border-slate/10 bg-paper-dim py-16 sm:py-20 lg:py-28"
+      id="pricing"
+    >
       <div className="container">
         <div className="text-center">
           <SectionLabel>PRICING</SectionLabel>
-          <h2 className="mx-auto my-5 max-w-2xl font-display text-[clamp(34px,5vw,58px)] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mx-auto my-5 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
             {content.pricing.headline}
           </h2>
           <p className="mx-auto mb-6 max-w-[500px] leading-[1.65] text-slate">
@@ -20,7 +23,7 @@ export default function Pricing() {
           </p>
           <button
             onClick={() => setAnnual(!annual)}
-            className="inline-flex gap-0.5 border border-slate/20 p-[3px] text-[11px]"
+            className="inline-flex gap-1 border border-slate/20 bg-paper p-1 text-[10px] font-semibold uppercase tracking-[0.12em] shadow-[4px_4px_0_rgba(18,24,31,0.06)]"
           >
             <span
               className={`px-[11px] py-2 ${!annual ? "bg-ink text-paper" : "text-slate"}`}
@@ -34,14 +37,14 @@ export default function Pricing() {
             </span>
           </button>
         </div>
-        <div className="mt-[50px] grid grid-cols-1 gap-[38px] md:grid-cols-3 md:gap-[18px]">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-3 md:gap-5">
           {content.pricing.tiers.map((tier) => (
             <article
               key={tier.name}
-              className={`relative border p-[25px] ${
+              className={`group relative border bg-paper p-6 shadow-[6px_6px_0_rgba(18,24,31,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_rgba(184,134,63,0.2)] sm:p-7 ${
                 tier.highlighted
-                  ? "border-[1.5px] border-brass"
-                  : "border-slate/20"
+                  ? "border-brass shadow-[6px_6px_0_rgba(184,134,63,0.3)]"
+                  : "border-slate/20 hover:border-brass/60"
               }`}
             >
               {tier.highlighted && (
@@ -53,7 +56,7 @@ export default function Pricing() {
               <p className="mt-2.5 text-[13px] leading-[1.6] text-slate">
                 {tier.description}
               </p>
-              <div className="my-7 font-display text-[38px] font-semibold tracking-[-0.02em]">
+              <div className="my-7 font-display text-[clamp(2.25rem,5vw,3rem)] font-semibold tracking-[-0.045em] text-ink">
                 {tier.price !== "Custom" && (
                   <small className="font-sans text-xs font-normal text-slate">
                     $
@@ -78,7 +81,7 @@ export default function Pricing() {
                   ? "Contact us"
                   : `Get started with ${tier.name}`}
               </CtaButton>
-              <ul className="mt-[30px] flex flex-col gap-[13px] text-xs">
+              <ul className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6 text-sm">
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
