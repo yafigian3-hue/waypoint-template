@@ -154,3 +154,76 @@ export const logoCloudItem = {
 export const logoCloudHover = {
   y: -2,
 };
+
+export const problemHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const problemCard = {
+  initial: {
+    opacity: 0,
+    y: 28,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.25,
+  },
+};
+
+export const problemCardHover = {
+  y: -4,
+};
+
+export const solutionHeader = {
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const solutionCard = {
+  initial: {
+    opacity: 0,
+    x: 28,
+  },
+  whileInView: {
+    opacity: 1,
+    x: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.25,
+  },
+};
+
+export const solutionCardHover = {
+  y: -4,
+};
+
+export const solutionIconHover = {
+  rotate: -4,
+  scale: 1.04,
+};
