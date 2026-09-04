@@ -21,7 +21,7 @@ export default function HowItWorks() {
           transition={motionTransitions.standard}
           className="text-center"
         >
-          <SectionLabel>HOW IT WORKS</SectionLabel>
+          <SectionLabel>{content.how.eyebrow}</SectionLabel>
 
           <h2 className="mx-auto my-5 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
             {content.how.headline}

@@ -69,6 +69,7 @@ export const content = {
     ],
   },
   how: {
+    eyebrow: "HOW IT WORKS",
     headline: "From error to root cause in three steps",
     steps: [
       {
