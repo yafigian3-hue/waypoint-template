@@ -282,6 +282,7 @@ export const faqContent = {
 };
 
 export type PreviewTab = (typeof content.preview.tabs)[number]["label"];
+
 export type PricingTier = (typeof content.pricing.tiers)[number];
 
 export const previewRows = [
@@ -289,21 +290,27 @@ export const previewRows = [
   { service: "payments", status: "degraded", latency: "1.8s" },
   { service: "notifications", status: "healthy", latency: "98ms" },
 ];
+
 export const errorLines = [
   "POST /v1/checkout",
   "PaymentTimeoutError",
   "at processPayment (payments.ts:84)",
   "at async handler (route.ts:21)",
 ];
+
 export const integrationIcons = ["Slack", "PagerDuty", "GitHub", "Sentry"];
+
 export const footerColumns = [
   { title: "Product", links: ["Features", "Pricing", "Integrations"] },
   { title: "Company", links: ["About", "Blog", "Contact"] },
   { title: "Resources", links: ["Documentation", "Changelog", "Status"] },
 ];
+
 export const footerTagline =
   "Error monitoring that shows you the path to root cause.";
+
 export const ctaFinal = {
+  eyebrow: "GET STARTED",
   headline: "Stop guessing. Start tracing.",
   subheadline: "Find the cause of production errors before your users do.",
   label: "Start for free",
