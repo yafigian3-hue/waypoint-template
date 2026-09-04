@@ -1,51 +1,92 @@
+import { motion } from "framer-motion";
+
 import { content, footerColumns, footerTagline } from "../../lib/content";
+import {
+  footerBrand,
+  footerBottom,
+  footerColumn,
+  footerLinkHover,
+  motionTransitions,
+} from "../../lib/animations";
 import { Logo } from "../shared/logo";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="container flex flex-col justify-between gap-[50px] py-[65px] md:flex-row">
-        <div>
-          <Logo>{content.nav.logo}</Logo>
+    <footer className="border-t border-slate/15 bg-paper">
+      <div className="container py-14 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.2fr_2fr] md:gap-16 lg:gap-24">
+          <motion.div {...footerBrand} transition={motionTransitions.standard}>
+            <Logo>{content.nav.logo}</Logo>
 
-          <p className="mt-[18px] max-w-[230px] text-xs leading-[1.6] text-slate">
-            {footerTagline}
-          </p>
-        </div>
+            <p className="mt-5 max-w-[280px] text-sm leading-7 text-slate">
+              {footerTagline}
+            </p>
 
-        <div className="flex flex-wrap gap-[35px] md:gap-20">
-          {footerColumns.map((column) => (
-            <div
-              key={column.title}
-              className="flex min-w-[90px] flex-col gap-3"
-            >
-              <div className="text-[10px] uppercase tracking-widest text-slate">
-                {column.title}
-              </div>
-
-              {column.links.map((link) => (
-                <a
-                  href="#product"
-                  key={link}
-                  className="text-[11px] text-slate"
-                >
-                  {link}
-                </a>
-              ))}
+            <div className="mt-7 flex items-center gap-2">
+              <span className="h-px w-7 bg-brass" />
+              <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-slate">
+                Developer infrastructure
+              </span>
             </div>
-          ))}
+          </motion.div>
+
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-10">
+            {footerColumns.map((column, index) => (
+              <motion.div
+                key={column.title}
+                {...footerColumn}
+                transition={{
+                  ...motionTransitions.standard,
+                  delay: 0.08 + index * 0.08,
+                }}
+                className="flex min-w-0 flex-col"
+              >
+                <div className="mb-4 font-mono text-[9px] uppercase tracking-[0.14em] text-slate">
+                  {column.title}
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  {column.links.map((link) => (
+                    <motion.a
+                      key={link}
+                      href="#product"
+                      whileHover={footerLinkHover}
+                      transition={motionTransitions.fast}
+                      className="w-fit text-sm text-ink/75 transition-colors duration-200 hover:text-ink"
+                    >
+                      {link}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="container flex justify-between border-t border-slate/20 pb-[25px] pt-[18px]">
-        <span className="text-[11px] text-slate">
-          © {new Date().getFullYear()} Waypoint, Inc.
-        </span>
+        <motion.div
+          {...footerBottom}
+          transition={{ ...motionTransitions.standard, delay: 0.2 }}
+          className="mt-14 flex flex-col gap-4 border-t border-slate/15 pt-5 sm:mt-16 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span className="font-mono text-[10px] text-slate">
+            © {new Date().getFullYear()} Waypoint, Inc.
+          </span>
 
-        <span className="flex gap-4 text-[11px] text-slate">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-        </span>
+          <div className="flex items-center gap-5 font-mono text-[10px] text-slate">
+            <a
+              href="#privacy"
+              className="transition-colors duration-200 hover:text-ink"
+            >
+              Privacy
+            </a>
+            <a
+              href="#terms"
+              className="transition-colors duration-200 hover:text-ink"
+            >
+              Terms
+            </a>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

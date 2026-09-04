@@ -535,3 +535,50 @@ export const finalCtaButton = {
 export const finalCtaButtonHover = {
   y: -3,
 };
+
+export const footerBrand = {
+  initial: {
+    opacity: 0,
+    y: 18,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.4,
+  },
+};
+
+export const footerColumn = {
+  initial: {
+    opacity: 0,
+    y: 16,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+  },
+  viewport: {
+    once: true,
+    amount: 0.35,
+  },
+};
+
+export const footerBottom = {
+  initial: {
+    opacity: 0,
+  },
+  whileInView: {
+    opacity: 1,
+  },
+  viewport: {
+    once: true,
+    amount: 0.3,
+  },
+};
+
+export const footerLinkHover = {
+  x: 3,
+};
