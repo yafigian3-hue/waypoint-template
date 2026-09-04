@@ -1,0 +1,41 @@
+Waypoint Landing Page Template — Single Use License
+
+Copyright (c) 2026 [Yafi Gian Pratama]
+
+This license governs the use of the source code, design, and assets
+included in this template ("the Template").
+
+By purchasing the Template, you are granted the following rights:
+
+1. GRANT OF LICENSE
+   You may use, modify, and adapt the Template to build ONE (1) end
+   product per purchase (your own website, or a website built for a
+   single client). You may use the Template for personal or commercial
+   projects under this restriction.
+
+2. RESTRICTIONS
+   You may NOT:
+   - Resell, redistribute, sublicense, or share the Template's source
+     files as a standalone product, template, boilerplate, or starter
+     kit — whether modified or unmodified.
+   - Use a single purchase across multiple unrelated end products or
+     multiple clients. Each additional end product requires a separate
+     license.
+   - Claim authorship of the original Template design or source code.
+
+3. WHAT YOU CAN DO
+   - Modify all content, colors, fonts, layout, and code freely.
+   - Use it for yourself or for a paying client's project.
+   - Deploy the resulting website publicly, including for commercial use.
+
+4. NO WARRANTY
+   The Template is provided "as is", without warranty of any kind,
+   express or implied. The author is not liable for any damages arising
+   from the use of this Template.
+
+5. SUPPORT & UPDATES
+   Minor updates and bug fixes may be provided at the author's
+   discretion. This license does not guarantee ongoing support.
+
+For an extended license covering multiple end products, or questions
+about usage rights not covered here, contact: [yafigian3@gmail.com]
