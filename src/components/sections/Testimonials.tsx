@@ -17,15 +17,15 @@ export default function Testimonials() {
           {...testimonialHeader}
           transition={motionTransitions.standard}
         >
-          <SectionLabel light>FROM THE TEAMS</SectionLabel>
+          <SectionLabel light>{content.testimonials.eyebrow}</SectionLabel>
 
           <h2 className="my-5 max-w-4xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-paper">
-            {content.testimonials[0].quote}
+            {content.testimonials.items[0].quote}
           </h2>
         </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-3 md:gap-5">
-          {content.testimonials.map((item, index) => (
+          {content.testimonials.items.map((item, index) => (
             <motion.article
               key={item.name}
               {...testimonialCard}

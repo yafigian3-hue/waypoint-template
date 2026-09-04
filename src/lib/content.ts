@@ -158,29 +158,34 @@ export const content = {
       },
     ],
   },
-  testimonials: [
-    {
-      quote:
-        "Waypoint cut the time we spend finding the cause of errors from hours to minutes.",
-      name: "Raka Pratama",
-      role: "Backend Engineer",
-      company: "Northstar Labs",
-    },
-    {
-      quote:
-        "Now we know which service is having issues before customers start contacting support.",
-      name: "Maya Chen",
-      role: "Engineering Lead",
-      company: "Vector Systems",
-    },
-    {
-      quote:
-        "The context Waypoint provides makes incident response much faster.",
-      name: "Dimas Arya",
-      role: "Senior Software Engineer",
-      company: "Orbit Cloud",
-    },
-  ],
+  testimonials: {
+    eyebrow: "FROM THE TEAMS",
+    items: [
+      {
+        quote:
+          "Waypoint cut the time we spend finding the cause of errors from hours to minutes.",
+        name: "Raka Pratama",
+        role: "Backend Engineer",
+        company: "Northstar Labs",
+      },
+
+      {
+        quote:
+          "Now we know which service is having issues before customers start contacting support.",
+        name: "Maya Chen",
+        role: "Engineering Lead",
+        company: "Vector Systems",
+      },
+
+      {
+        quote:
+          "The context Waypoint provides makes incident response much faster.",
+        name: "Dimas Arya",
+        role: "Senior Software Engineer",
+        company: "Orbit Cloud",
+      },
+    ],
+  },
   pricing: {
     headline: "Simple pricing for every stage of growth",
     subheadline: "Start small, then scale up as your production traffic grows.",
@@ -254,7 +259,6 @@ export const content = {
 } as const;
 
 export type PreviewTab = (typeof content.preview.tabs)[number]["label"];
-export type FAQ = (typeof content.faq)[number];
 export type PricingTier = (typeof content.pricing.tiers)[number];
 
 export const previewRows = [
