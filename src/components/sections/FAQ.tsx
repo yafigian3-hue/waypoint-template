@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-import { content } from "../../lib/content";
+import { content, faqContent } from "../../lib/content";
 import {
   faqAnswer,
   faqHeader,
@@ -84,19 +84,19 @@ export default function FAQ() {
           transition={motionTransitions.standard}
           className="md:sticky md:top-24 md:self-start"
         >
-          <SectionLabel>FAQ</SectionLabel>
+          <SectionLabel>{faqContent.eyebrow}</SectionLabel>
 
           <h2 className="my-5 max-w-md font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
-            Frequently asked questions
+            {faqContent.headline}
           </h2>
 
           <p className="max-w-[420px] text-sm leading-7 text-slate sm:text-base">
-            Still have questions?{" "}
+            {faqContent.supportText}{" "}
             <a
-              href="mailto:hello@waypoint.dev"
+              href={faqContent.contactHref}
               className="font-medium text-ink underline decoration-slate/40 underline-offset-4 transition-colors duration-200 hover:text-brass"
             >
-              Contact us.
+              {faqContent.contactText}
             </a>
           </p>
         </motion.div>

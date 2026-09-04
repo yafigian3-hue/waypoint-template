@@ -273,6 +273,14 @@ export const content = {
   ],
 } as const;
 
+export const faqContent = {
+  eyebrow: "FAQ",
+  headline: "Frequently asked questions",
+  supportText: "Still have questions?",
+  contactText: "Contact us.",
+  contactHref: "mailto:hello@waypoint.dev",
+};
+
 export type PreviewTab = (typeof content.preview.tabs)[number]["label"];
 export type PricingTier = (typeof content.pricing.tiers)[number];
 
