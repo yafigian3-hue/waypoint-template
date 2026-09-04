@@ -53,6 +53,7 @@ export const content = {
     eyebrow: "SOLUTION",
     headline: "One place to see what's actually happening.",
     body: "Waypoint connects errors to the request, service, deployment, and the people who can fix them.",
+    cta: "See how it works",
     features: [
       {
         title: "Automatic root cause",
