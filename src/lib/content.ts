@@ -16,6 +16,18 @@ export const content = {
       "Waypoint helps engineering teams find the root cause of production errors before your users do.",
     primary: "Start for free",
     secondary: "See how it works",
+    trust: "Set up in 5 minutes · No credit card required",
+    incident: {
+      label: "Live incident",
+      time: "2 min ago",
+      error: "PaymentTimeoutError",
+      service: "payments-service · POST /checkout",
+      rootCause: "database connection pool exhausted",
+    },
+    trace: {
+      label: "Trace path",
+      services: ["api-gateway", "checkout", "payments"],
+    },
   },
   logos: ["Northstar Labs", "Vector Systems", "Orbit Cloud", "Lumen Stack"],
   problem: {

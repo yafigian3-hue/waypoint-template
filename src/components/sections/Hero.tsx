@@ -85,7 +85,7 @@ export default function Hero() {
             className="mt-6 flex items-center gap-2 text-[11px] text-slate"
           >
             <span className="inline-block size-1.5 rounded-full bg-brass" />
-            Set up in 5 minutes · No credit card required
+            {content.hero.trust}
           </motion.div>
         </div>
 
@@ -130,16 +130,15 @@ export default function Hero() {
           >
             <div className="flex items-center justify-between">
               <span className="font-mono text-[9px] uppercase tracking-[.15em] text-slate">
-                Live incident
+                {content.hero.incident.label}
               </span>
 
               <span className="font-mono text-[9px] text-status">
-                ● 2 min ago
+                ● {content.hero.incident.time}
               </span>
             </div>
 
             <div className="mt-5 flex items-start gap-3">
-              {/* Alert pulse */}
               <motion.div
                 animate={pulseScale}
                 transition={motionTransitions.pulse}
@@ -150,18 +149,18 @@ export default function Hero() {
 
               <div>
                 <div className="font-mono text-xs font-semibold">
-                  PaymentTimeoutError
+                  {content.hero.incident.error}
                 </div>
 
                 <div className="mt-1 font-mono text-[10px] text-slate">
-                  payments-service · POST /checkout
+                  {content.hero.incident.service}
                 </div>
               </div>
             </div>
 
             <div className="mt-4 border-t border-slate/20 pt-3 font-mono text-[10px] text-slate">
-              <span className="text-brass">root cause</span> · database
-              connection pool exhausted
+              <span className="text-brass">root cause</span> ·{" "}
+              {content.hero.incident.rootCause}
             </div>
           </motion.div>
 
@@ -180,26 +179,31 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2 font-mono text-[10px] text-slate">
               <GitBranch size={13} />
-              Trace path
+              {content.hero.trace.label}
             </div>
 
             <div className="mt-4 flex items-center gap-1.5 font-mono text-[10px]">
-              <span>api-gateway</span>
+              {content.hero.trace.services.map((service, index) => (
+                <span key={service} className="flex items-center gap-1.5">
+                  {index > 0 && <ArrowRight size={11} className="text-slate" />}
 
-              <ArrowRight size={11} className="text-slate" />
-
-              <span>checkout</span>
-
-              <ArrowRight size={11} className="text-slate" />
-
-              {/* Active service pulse */}
-              <motion.span
-                animate={pulseOpacity}
-                transition={motionTransitions.pulse}
-                className="text-brass"
-              >
-                payments
-              </motion.span>
+                  <motion.span
+                    animate={
+                      index === content.hero.trace.services.length - 1
+                        ? pulseOpacity
+                        : undefined
+                    }
+                    transition={motionTransitions.pulse}
+                    className={
+                      index === content.hero.trace.services.length - 1
+                        ? "text-brass"
+                        : undefined
+                    }
+                  >
+                    {service}
+                  </motion.span>
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>
