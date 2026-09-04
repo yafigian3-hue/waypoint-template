@@ -87,7 +87,62 @@ export const content = {
     ],
   },
   preview: {
+    eyebrow: "PRODUCT PREVIEW",
     headline: "See what's actually happening in production",
+    defaultTab: "Error tracking",
+    browser: {
+      host: "app.waypoint.dev",
+    },
+    sidebar: {
+      brand: "WAYPOINT",
+      items: ["Overview", "Errors", "Services", "Alerts"],
+    },
+    dashboard: {
+      context: "Production / errors",
+      liveLabel: "Live",
+      sidebar: {
+        brand: "WAYPOINT",
+        items: ["Overview", "Errors", "Services", "Alerts"],
+      },
+      metrics: [
+        ["Total errors", "1,284", "+12.4%"],
+        ["Affected services", "3", "+1 today"],
+        ["Error rate", "0.42%", "-8.1%"],
+      ],
+      recentErrorsLabel: "Recent errors",
+      rootCause: {
+        error: "PaymentTimeoutError",
+        service: "payments-service",
+        cause: "database connection pool exhausted",
+        endpoint: "POST /checkout",
+      },
+      teamAlerts: [
+        {
+          severity: "critical",
+          service: "payments",
+          message: "PaymentTimeoutError",
+          time: "2 min ago",
+        },
+        {
+          severity: "warning",
+          service: "api-gateway",
+          message: "Latency threshold exceeded",
+          time: "8 min ago",
+        },
+        {
+          severity: "info",
+          service: "notifications",
+          message: "Deployment completed",
+          time: "14 min ago",
+        },
+      ],
+      teamAlertsLabel: "Recent alerts",
+      traceAction: "View full trace",
+    },
+    trace: {
+      error: "PaymentTimeoutError",
+      action: "View full trace",
+    },
     tabs: [
       {
         label: "Error tracking",
