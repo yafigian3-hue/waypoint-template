@@ -306,12 +306,21 @@ export const footerColumns = [
   { title: "Resources", links: ["Documentation", "Changelog", "Status"] },
 ];
 
-export const footerTagline =
-  "Error monitoring that shows you the path to root cause.";
-
 export const ctaFinal = {
   eyebrow: "GET STARTED",
   headline: "Stop guessing. Start tracing.",
   subheadline: "Find the cause of production errors before your users do.",
   label: "Start for free",
+};
+
+export const footerTagline =
+  "Error monitoring that shows you the path to root cause.";
+
+export const footerContent = {
+  descriptor: "Developer infrastructure",
+  privacy: "Privacy",
+  terms: "Terms",
+  copyrightName: "Waypoint, Inc.",
+  privacyHref: "#privacy",
+  termsHref: "#terms",
 };

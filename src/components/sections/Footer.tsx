@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
-import { content, footerColumns, footerTagline } from "../../lib/content";
+import {
+  content,
+  footerColumns,
+  footerContent,
+  footerTagline,
+} from "../../lib/content";
+
 import {
   footerBrand,
   footerBottom,
@@ -25,7 +31,7 @@ export default function Footer() {
             <div className="mt-7 flex items-center gap-2">
               <span className="h-px w-7 bg-brass" />
               <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-slate">
-                Developer infrastructure
+                {footerContent.descriptor}
               </span>
             </div>
           </motion.div>
@@ -69,21 +75,22 @@ export default function Footer() {
           className="mt-14 flex flex-col gap-4 border-t border-slate/15 pt-5 sm:mt-16 sm:flex-row sm:items-center sm:justify-between"
         >
           <span className="font-mono text-[10px] text-slate">
-            © {new Date().getFullYear()} Waypoint, Inc.
+            © {new Date().getFullYear()} {footerContent.copyrightName}
           </span>
 
           <div className="flex items-center gap-5 font-mono text-[10px] text-slate">
             <a
-              href="#privacy"
+              href={footerContent.privacyHref}
               className="transition-colors duration-200 hover:text-ink"
             >
-              Privacy
+              {footerContent.privacy}
             </a>
+
             <a
-              href="#terms"
+              href={footerContent.termsHref}
               className="transition-colors duration-200 hover:text-ink"
             >
-              Terms
+              {footerContent.terms}
             </a>
           </div>
         </motion.div>
