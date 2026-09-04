@@ -17,6 +17,8 @@ import { CtaButton } from "../shared/cta-button";
 export default function Pricing() {
   const [annual, setAnnual] = useState(false);
 
+  const yearlyDiscount = content.pricing.billing.yearlyDiscount;
+
   return (
     <section
       className="relative overflow-hidden border-b border-slate/10 bg-paper-dim py-16 sm:py-20 lg:py-28"
@@ -28,7 +30,7 @@ export default function Pricing() {
           transition={motionTransitions.standard}
           className="text-center"
         >
-          <SectionLabel>PRICING</SectionLabel>
+          <SectionLabel>{content.pricing.eyebrow}</SectionLabel>
 
           <h2 className="mx-auto my-5 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-ink">
             {content.pricing.headline}
@@ -52,19 +54,16 @@ export default function Pricing() {
             className="inline-flex gap-1 border border-slate/20 bg-paper p-1 text-[10px] font-semibold uppercase tracking-[0.12em] shadow-[4px_4px_0_rgba(18,24,31,0.06)]"
           >
             <span
-              className={`px-[11px] py-2 ${
-                !annual ? "bg-ink text-paper" : "text-slate"
-              }`}
+              className={`px-[11px] py-2 ${!annual ? "bg-ink text-paper" : "text-slate"}`}
             >
-              Monthly
+              {content.pricing.billing.monthlyLabel}
             </span>
 
             <span
-              className={`px-[11px] py-2 ${
-                annual ? "bg-ink text-paper" : "text-slate"
-              }`}
+              className={`px-[11px] py-2 ${annual ? "bg-ink text-paper" : "text-slate"}`}
             >
-              Yearly <b className="font-semibold text-brass">-20%</b>
+              {content.pricing.billing.yearlyLabel}{" "}
+              <b className="font-semibold text-brass">-{yearlyDiscount}%</b>
             </span>
           </motion.button>
         </motion.div>
@@ -90,7 +89,7 @@ export default function Pricing() {
             >
               {tier.highlighted && (
                 <span className="absolute -top-2.5 right-4 bg-brass px-[7px] py-1 font-mono text-[8px] uppercase tracking-wider text-paper">
-                  MOST POPULAR
+                  {content.pricing.labels.popular}
                 </span>
               )}
 
@@ -101,21 +100,23 @@ export default function Pricing() {
               </p>
 
               <div className="my-7 font-display text-[clamp(2.25rem,5vw,3rem)] font-semibold tracking-[-0.045em] text-ink">
-                {tier.price !== "Custom" && (
+                {tier.price !== content.pricing.labels.customPrice && (
                   <small className="font-sans text-xs font-normal text-slate">
-                    $
+                    {content.pricing.labels.currency}
                   </small>
                 )}
 
-                {tier.price !== "Custom"
+                {tier.price !== content.pricing.labels.customPrice
                   ? annual
-                    ? Math.round(Number(tier.price) * 0.8)
+                    ? Math.round(
+                        Number(tier.price) * (1 - yearlyDiscount / 100),
+                      )
                     : tier.price
                   : tier.price}
 
-                {tier.price !== "Custom" && (
+                {tier.price !== content.pricing.labels.customPrice && (
                   <small className="font-sans text-xs font-normal text-slate">
-                    /mo
+                    {content.pricing.labels.monthlySuffix}
                   </small>
                 )}
               </div>
@@ -125,8 +126,8 @@ export default function Pricing() {
                 className="w-full"
               >
                 {tier.name === "Enterprise"
-                  ? "Contact us"
-                  : `Get started with ${tier.name}`}
+                  ? content.pricing.labels.enterpriseCta
+                  : `${content.pricing.labels.tierCta} ${tier.name}`}
               </CtaButton>
 
               <ul className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6 text-sm">

@@ -188,8 +188,22 @@ export const content = {
     ],
   },
   pricing: {
+    eyebrow: "PRICING",
     headline: "Simple pricing for every stage of growth",
     subheadline: "Start small, then scale up as your production traffic grows.",
+    billing: {
+      monthlyLabel: "Monthly",
+      yearlyLabel: "Yearly",
+      yearlyDiscount: 20,
+    },
+    labels: {
+      popular: "MOST POPULAR",
+      customPrice: "Custom",
+      currency: "$",
+      monthlySuffix: "/mo",
+      enterpriseCta: "Contact us",
+      tierCta: "Get started with",
+    },
     tiers: [
       {
         name: "Starter",
