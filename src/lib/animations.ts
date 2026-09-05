@@ -117,44 +117,6 @@ export const pulseOpacity = {
   opacity: [0.5, 1, 0.5],
 };
 
-export function getDelay(base: number, index: number, step: number) {
-  return base + index * step;
-}
-
-export const logoCloudLabel = {
-  initial: {
-    opacity: 0,
-    y: 8,
-  },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-  },
-  viewport: {
-    once: true,
-    amount: 0.7,
-  },
-};
-
-export const logoCloudItem = {
-  initial: {
-    opacity: 0,
-    y: 8,
-  },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-  },
-  viewport: {
-    once: true,
-    amount: 0.7,
-  },
-};
-
-export const logoCloudHover = {
-  y: -2,
-};
-
 export const problemHeader = {
   initial: {
     opacity: 0,
@@ -262,10 +224,6 @@ export const howStepHover = {
   y: -4,
 };
 
-export const howStepSignalHover = {
-  width: "64px",
-};
-
 export const previewHeader = {
   initial: {
     opacity: 0,
@@ -345,10 +303,6 @@ export const testimonialCard = {
 
 export const testimonialCardHover = {
   y: -5,
-};
-
-export const testimonialQuoteHover = {
-  x: 3,
 };
 
 export const pricingHeader = {
