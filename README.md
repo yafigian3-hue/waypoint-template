@@ -9,7 +9,7 @@ Demo content ("Waypoint", an API error monitoring tool) is placeholder — repla
 - React 19 + Vite
 - TypeScript
 - Tailwind CSS 3
-- Framer Motion (single entrance animation on the hero, no other section)
+- Framer Motion (subtle entrance, hover, and interaction animations across sections)
 - lucide-react (icons)
 - Self-hosted fonts via `@fontsource` (Fraunces, Inter, JetBrains Mono)
 
@@ -79,6 +79,7 @@ src/
 │   │   ├── Solution.tsx
 │   │   ├── HowItWorks.tsx
 │   │   ├── Preview.tsx
+│   │   ├── DashboardPreview.tsx
 │   │   ├── Testimonials.tsx
 │   │   ├── Pricing.tsx
 │   │   ├── FAQ.tsx
@@ -89,8 +90,9 @@ src/
 │       ├── logo.tsx
 │       ├── route-marker.tsx
 │       └── section-label.tsx
-└── lib/
+└──└── lib/
     ├── content.ts               all page copy — edit this first
+    ├── animations.ts
     └── utils.ts
 ```
 
