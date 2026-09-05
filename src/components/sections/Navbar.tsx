@@ -56,7 +56,9 @@ export default function Navbar() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <CtaButton href="#start">{content.nav.cta}</CtaButton>{" "}
+            <CtaButton href={content.nav.ctaHref}>
+              {content.nav.cta}
+            </CtaButton>{" "}
           </motion.div>
         </nav>
 
@@ -151,7 +153,9 @@ export default function Navbar() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <CtaButton href="#start">{content.nav.cta}</CtaButton>{" "}
+                <CtaButton href={content.nav.ctaHref}>
+                  {content.nav.cta}
+                </CtaButton>
               </motion.div>
             </nav>
           </motion.div>

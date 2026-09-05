@@ -68,9 +68,11 @@ export default function Hero() {
             }}
             className="mt-6 flex flex-wrap gap-3"
           >
-            <CtaButton href="#start">{content.hero.primary}</CtaButton>
+            <CtaButton href={content.hero.primaryHref}>
+              {content.hero.primary}
+            </CtaButton>
 
-            <CtaButton href="#how-it-works" variant="text">
+            <CtaButton href={content.hero.secondaryHref} variant="text">
               {content.hero.secondary}
             </CtaButton>
           </motion.div>

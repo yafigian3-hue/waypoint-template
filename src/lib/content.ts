@@ -8,6 +8,7 @@ export const content = {
       { label: "FAQ", href: "#faq" },
     ],
     cta: "Start for free",
+    ctaHref: "#start",
   },
   hero: {
     eyebrow: "ERROR MONITORING FOR MODERN BACKENDS",
@@ -15,7 +16,9 @@ export const content = {
     subheadline:
       "Waypoint helps engineering teams find the root cause of production errors before your users do.",
     primary: "Start for free",
+    primaryHref: "#start",
     secondary: "See how it works",
+    secondaryHref: "#how-it-works",
     trust: "Set up in 5 minutes · No credit card required",
     incident: {
       label: "Live incident",
@@ -54,6 +57,7 @@ export const content = {
     headline: "One place to see what's actually happening.",
     body: "Waypoint connects errors to the request, service, deployment, and the people who can fix them.",
     cta: "See how it works",
+    ctaHref: "#how-it-works",
     features: [
       {
         title: "Automatic root cause",
@@ -93,10 +97,6 @@ export const content = {
     defaultTab: "Error tracking",
     browser: {
       host: "app.waypoint.dev",
-    },
-    sidebar: {
-      brand: "WAYPOINT",
-      items: ["Overview", "Errors", "Services", "Alerts"],
     },
     dashboard: {
       context: "Production / errors",
@@ -300,17 +300,12 @@ export const errorLines = [
 
 export const integrationIcons = ["Slack", "PagerDuty", "GitHub", "Sentry"];
 
-export const footerColumns = [
-  { title: "Product", links: ["Features", "Pricing", "Integrations"] },
-  { title: "Company", links: ["About", "Blog", "Contact"] },
-  { title: "Resources", links: ["Documentation", "Changelog", "Status"] },
-];
-
 export const ctaFinal = {
   eyebrow: "GET STARTED",
   headline: "Stop guessing. Start tracing.",
   subheadline: "Find the cause of production errors before your users do.",
   label: "Start for free",
+  href: "#start",
 };
 
 export const footerTagline =
@@ -319,8 +314,36 @@ export const footerTagline =
 export const footerContent = {
   descriptor: "Developer infrastructure",
   privacy: "Privacy",
-  terms: "Terms",
-  copyrightName: "Waypoint, Inc.",
   privacyHref: "#privacy",
+  terms: "Terms",
   termsHref: "#terms",
+  copyrightName: "Waypoint, Inc.",
 };
+
+export const footerColumns = [
+  {
+    title: "Product",
+    links: [
+      { label: "Features", href: "#product" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "Integrations", href: "#product" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "#product" },
+      { label: "Blog", href: "#product" },
+      { label: "Contact", href: "mailto:hello@waypoint.dev" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Documentation", href: "#product" },
+      { label: "Changelog", href: "#product" },
+      { label: "Status", href: "#product" },
+    ],
+  },
+];
+

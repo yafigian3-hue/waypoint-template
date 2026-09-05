@@ -54,13 +54,13 @@ export default function Footer() {
                 <div className="flex flex-col gap-3">
                   {column.links.map((link) => (
                     <motion.a
-                      key={link}
-                      href="#product"
+                      key={link.label}
+                      href={link.href}
                       whileHover={footerLinkHover}
                       transition={motionTransitions.fast}
                       className="w-fit text-sm text-ink/75 transition-colors duration-200 hover:text-ink"
                     >
-                      {link}
+                      {link.label}
                     </motion.a>
                   ))}
                 </div>

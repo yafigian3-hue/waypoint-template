@@ -32,7 +32,7 @@ export default function FinalCta() {
           transition={motionTransitions.standard}
         >
           <SectionLabel light>{ctaFinal.eyebrow}</SectionLabel>
-          
+
           <h2 className="mb-5 mt-5 max-w-4xl font-display text-[clamp(2.75rem,7vw,5.5rem)] font- leading-[0.94] tracking-[-0.045em] text-paper">
             {ctaFinal.headline}
           </h2>
@@ -54,7 +54,9 @@ export default function FinalCta() {
           }}
           className="mt-7"
         >
-          <CtaButton variant="light">{ctaFinal.label}</CtaButton>
+          <CtaButton href={ctaFinal.href} variant="light">
+            {ctaFinal.label}
+          </CtaButton>
         </motion.div>
       </div>
     </section>

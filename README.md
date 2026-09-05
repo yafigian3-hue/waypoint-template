@@ -104,4 +104,4 @@ See `LICENSE.txt`. Summary: one purchase = use in one end product. See the file 
 
 ## Support
 
-Questions about this template? Contact **[your email here]**.
+Questions about this template? Contact **[yafigian3@gmail.com]**.

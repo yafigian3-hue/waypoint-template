@@ -29,7 +29,7 @@ export default function Solution() {
             {content.solution.body}
           </p>
 
-          <CtaButton href="#how-it-works" className="mt-6">
+          <CtaButton href={content.solution.ctaHref} className="mt-6">
             {content.solution.cta}
           </CtaButton>
         </motion.div>
